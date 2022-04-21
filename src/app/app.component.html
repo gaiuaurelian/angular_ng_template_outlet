@@ -23,18 +23,54 @@
 </div>
 <ng-template #dogsTemplate>
   <p>Breeds of dogs</p>
-  <ul>
-    <li>German Shepard</li>
-    <li>Corgi</li>
-    <li>Fox Terrier</li>
+  <ul class="list-of-images">
+    <li>
+      <img
+        class="breed-image"
+        src="https://th.bing.com/th/id/R.c2fcb99c7aad613b995442c21823bd7e?rik=8hF4DISV9UzXXw&pid=ImgRaw&r=0"
+      />
+      <p>German Shepard</p>
+    </li>
+    <li>
+      <img
+        class="breed-image"
+        src="https://th.bing.com/th/id/R.49fc9f797a6f4c773ed8e63543dc7ba2?rik=wTO1x71kcIvEEg&riu=http%3a%2f%2f4.bp.blogspot.com%2f-ZtI8ADZmxPg%2fTpmD-tg6iII%2fAAAAAAAAH2o%2fd84ckw4xIU4%2fs1600%2fpembroke-welsh-corgi-pictures5.JPG&ehk=tKReOcseGSPRuKsgHD7%2f7L5aAd8F4jQc%2bL5xjEPls%2bI%3d&risl=&pid=ImgRaw&r=0"
+      />
+      <p>Corgi</p>
+    </li>
+    <li>
+      <img
+        class="breed-image"
+        src="https://th.bing.com/th/id/R.213e30f1611ecadb03eff10b4db7c72e?rik=L3MRRzzStvMXkQ&pid=ImgRaw&r=0"
+      />
+      <p>Jack Russell</p>
+    </li>
   </ul>
 </ng-template>
 <ng-template #catsTemplate>
   <p>Breads of cats</p>
-  <ul>
-    <li>Birman</li>
-    <li>Siamese</li>
-    <li>Sphynx</li>
+  <ul class="list-of-images">
+    <li>
+      <img
+        class="breed-image"
+        src="https://th.bing.com/th/id/OIP.DwHZfV5FE1GdfdPerMdbEQHaFE?w=255&h=180&c=7&r=0&o=5&pid=1.7"
+      />
+      <p>Birman</p>
+    </li>
+    <li>
+      <img
+        class="breed-image"
+        src="https://www.photos-public-domain.com/wp-content/uploads/2010/12/siamese_cat.jpg"
+      />
+      <p>Siamese</p>
+    </li>
+    <li>
+      <img
+        class="breed-image"
+        src="https://th.bing.com/th/id/OIP.9pyFTIUTkSf2Hx40MS4CRwHaE8?pid=ImgDet&rs=1"
+      />
+      <p>Sphynx</p>
+    </li>
   </ul>
 </ng-template>
 
@@ -44,8 +80,11 @@
   let-templateBreeds="breeds"
 >
   <p>{{ templateDescription }}</p>
-  <ul>
-    <li *ngFor="let breed of templateBreeds">{{ breed }}</li>
+  <ul class="list-of-images">
+    <li *ngFor="let breed of templateBreeds">
+      <img class="breed-image" [src]="breed.image" />
+      <p>{{ breed.name }}</p>
+    </li>
   </ul>
 </ng-template>
 <ng-template
@@ -54,7 +93,10 @@
   let-templateBreeds="breeds"
 >
   <p>{{ templateDescription }}</p>
-  <ul>
-    <li *ngFor="let breed of templateBreeds">{{ breed }}</li>
+  <ul class="list-of-images">
+    <li *ngFor="let breed of templateBreeds">
+      <img class="breed-image" [src]="breed.image" />
+      <p>{{ breed.name }}</p>
+    </li>
   </ul>
 </ng-template>

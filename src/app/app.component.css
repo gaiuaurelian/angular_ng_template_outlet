@@ -20,3 +20,23 @@
 .navbar-container button:not(:last-of-type) {
   margin-right: 10px;
 }
+
+.breed-image {
+  width: 200px;
+}
+
+.list-of-images {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0;
+}
+
+.list-of-images li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
