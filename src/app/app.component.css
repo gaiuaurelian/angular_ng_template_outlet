@@ -1,3 +1,22 @@
-p {
-  font-family: Lato;
+.navbar-container {
+  display: flex;
+  justify-content: left;
+  padding-bottom: 10px;
+  border-bottom: solid 2px black;
+}
+
+.navbar-container button {
+  min-width: 150px;
+  background-color: white;
+  border: solid 1px grey;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+}
+.navbar-container button:hover {
+  background-color: lightgray;
+}
+
+.navbar-container button:not(:last-of-type) {
+  margin-right: 10px;
 }

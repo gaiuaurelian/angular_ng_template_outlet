@@ -1,4 +1,60 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<div class="navbar-container">
+  <button (click)="selectBreed('Dogs')">Dogs</button>
+  <button (click)="selectBreed('Cats')">Cats</button>
+</div>
+<ng-container *ngIf="breedSelection">
+  {{ breedSelection }}
+</ng-container>
+
+<div class="breeds">
+  <h1>Without Context</h1>
+  <ng-container *ngTemplateOutlet="selectedBreedTemplate"> </ng-container>
+</div>
+
+<div class="breeds" *ngIf="selectedBreedWithContext">
+  <h1>With Context</h1>
+  <ng-container
+    *ngTemplateOutlet="
+      selectedBreedWithContext.template;
+      context: selectedBreedWithContext.context
+    "
+  >
+  </ng-container>
+</div>
+<ng-template #dogsTemplate>
+  <p>Breeds of dogs</p>
+  <ul>
+    <li>German Shepard</li>
+    <li>Corgi</li>
+    <li>Fox Terrier</li>
+  </ul>
+</ng-template>
+<ng-template #catsTemplate>
+  <p>Breads of cats</p>
+  <ul>
+    <li>Birman</li>
+    <li>Siamese</li>
+    <li>Sphynx</li>
+  </ul>
+</ng-template>
+
+<ng-template
+  #listOfDogs
+  let-templateDescription="description"
+  let-templateBreeds="breeds"
+>
+  <p>{{ templateDescription }}</p>
+  <ul>
+    <li *ngFor="let breed of templateBreeds">{{ breed }}</li>
+  </ul>
+</ng-template>
+<ng-template
+  #listOfCats
+  let-templateDescription="description"
+  let-templateBreeds="breeds"
+>
+  <p>{{ templateDescription }}</p>
+  <ul>
+    <li *ngFor="let breed of templateBreeds">{{ breed }}</li>
+  </ul>
+</ng-template>
